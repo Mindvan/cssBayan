@@ -57,31 +57,94 @@
 
 .boyan {
     width: 100%;
+    cursor: pointer;
 }
 
-.boyan > * {
+.boyan-item {
+    background: transparent;
+    cursor: pointer !important;
     border-top: 1px solid rgb(217, 217, 217);
-    padding: 15px 0;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    /*grid-template-rows: 0.3fr 1.7fr;*/
+    grid-template-areas:
+    "a b"
+    "c c";
+}
+
+.boyan-item > .boyan-item-title { grid-area: a; }
+.boyan-item > input[type=radio] { grid-area: b; }
+.boyan-item > .boyan-item-meme { grid-area: c; }
+
+label::after {
+    opacity: 0;
+    /*display: none;*/
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath d='M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z'/%3E%3C/svg%3E");
+    text-align: right;
+    width: 20px;
+    float:right;
+}
+
+input[type=radio] {
+    height: 1em;
+    margin-left: auto;
+    margin-right: 0;
+    display: none;
 }
 
 .boyan-item-title {
     font-weight: 700;
+    cursor: pointer;
+    background-color: #e5e5e5;
+    padding: 0 10px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.boyan-item-bottom {
+.boyan-item-meme {
     width: 250px;
-    display: block;
     margin: 0 auto;
 }
 
-.arrow {
-    border-color: transparent;
-    border-top-color: black;
-    border-style: solid;
-    border-width: 0.7em 0.5em 0;
+.boyan-item-meme-wrapper {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s, padding 0.5s;
 }
 
-.boyan-item-top {
-    display: flex;
-    justify-content: space-between;
+.boyan-item-meme-wrapper img {
+    width: 250px;
 }
+
+.boyan-item-pic {
+    overflow: hidden;
+}
+
+input[type="radio"]:checked + label + .boyan-item-meme > .boyan-item-meme-wrapper{
+    max-height: 100%;
+}
+
+input[type="radio"]:checked + label::after{
+    /*display: none;*/
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath d='M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z'/%3E%3C/svg%3E");
+    transform: rotate(180deg);
+}
+
+.boyan:hover > .boyan-item > .boyan-item-title {
+    color: #0fa5d7;
+}
+
+.boyan:hover > .boyan-item > label::after {
+    display: block;
+    opacity: 100%;
+    color: #0fa5d7;
+}
+
+.boyan-item-title:hover + .boyan-item-meme > .boyan-item-meme-wrapper{
+    max-height: 100%;
+};
+
+
