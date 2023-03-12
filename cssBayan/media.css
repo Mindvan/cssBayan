@@ -1,0 +1,35 @@
+@media screen and (max-width: 820px) {
+    /* изменение размера шрифта */
+    .task-title {
+        font-size: 1.5rem;
+    }
+
+    /* изменение размера шрифта */
+    .boyan-item-title {
+        font-size: 1rem;
+        height: 3rem;
+    }
+
+    .boyan-item-meme, .boyan-item-meme-wrapper img {
+        width: 14rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    /* изменение размера шрифта */
+    .task-title {
+        font-size: 1rem;
+    }
+
+    /* изменение размера шрифта */
+    .boyan-item-title {
+        font-size: 0.8rem;
+        height: 2.5rem;
+    }
+
+    .boyan-item-meme, .boyan-item-meme-wrapper img {
+        width: 12rem;
+    }
+}
+

@@ -1,4 +1,4 @@
-*, *::after, *::before{
+* {
     padding: 0;
     margin: 0;
     border: 0;
@@ -58,6 +58,7 @@ body {
     font-weight: 900;
     text-align: start;
     color: #0fa5d7;
+    font-size: 2rem;
 }
 
 .boyan {
@@ -68,7 +69,7 @@ body {
 .boyan-item {
     background: transparent;
     cursor: pointer !important;
-    border-top: 1px solid rgb(217, 217, 217);
+    border-top: 0.06rem solid rgb(66, 66, 66);
     height: 100%;
     display: grid;
     grid-template-columns: 1fr;
@@ -82,14 +83,13 @@ body {
 .boyan-item > input[type=radio] { grid-area: b; }
 .boyan-item > .boyan-item-meme { grid-area: c; }
 
-label::after {
+.boyan-item-arrow {
+    width: 1rem;
     opacity: 0;
-    /*display: none;*/
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath d='M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z'/%3E%3C/svg%3E");
-    text-align: right;
-    width: 20px;
-    float:right;
-    filter: invert(59%) sepia(50%) saturate(3479%) hue-rotate(157deg) brightness(91%) contrast(88%);
+}
+
+svg d {
+    fill: blue;
 }
 
 input[type=radio] {
@@ -102,9 +102,9 @@ input[type=radio] {
 .boyan-item-title {
     font-weight: 700;
     cursor: pointer;
-    background-color: #292f31;
-    padding: 0 10px;
-    height: 50px;
+    font-size: 1.5rem;
+    padding: 0 0.625rem;
+    height: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -112,20 +112,19 @@ input[type=radio] {
 }
 
 .boyan-item-meme {
-    width: 250px;
+    width: 23rem;
     margin: 0 auto;
-    padding: 15px 0;
 }
 
 .boyan-item-meme-wrapper {
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.6s;
-    transition-timing-function: cubic-bezier(0,.6,0,1);
+    transition-timing-function: cubic-bezier(0,.5,0,1);
 }
 
 .boyan-item-meme-wrapper img {
-    width: 250px;
+    width: 23rem;
 }
 
 .boyan-item-pic {
@@ -140,7 +139,7 @@ input[type="radio"]:checked + label + .boyan-item-meme > .boyan-item-meme-wrappe
     max-height: 100%;
 }
 
-input[type="radio"]:checked + label::after{
+input[type="radio"]:checked + label > .boyan-item-arrow {
     transform: rotate(180deg);
 }
 
@@ -148,7 +147,7 @@ input[type="radio"]:checked + label::after{
     color: white;
 }
 
-.boyan:hover > .boyan-item > label::after {
+.boyan:hover > .boyan-item > label > .boyan-item-arrow {
     display: block;
     opacity: 100%;
 }
@@ -157,7 +156,7 @@ input[type="radio"]:checked + label::after{
     max-height: 100%;
 }
 
-.boyan-item-title:hover:after {
+.boyan-item-title:hover > .boyan-item-arrow {
     transform: rotate(180deg);
 }
 
