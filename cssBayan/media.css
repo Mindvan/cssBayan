@@ -16,7 +16,7 @@
         transform: rotate(180deg);
     }
 
-    img:active {
+    .boyan-item:active {
         opacity: 0.3;
     }
 }
