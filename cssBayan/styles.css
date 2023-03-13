@@ -144,21 +144,25 @@ input[type="radio"]:checked + label > .boyan-item-arrow {
     transform: rotate(180deg);
 }
 
-.boyan:hover > .boyan-item > .boyan-item-title {
-    color: white;
-}
+/*.boyan:hover > .boyan-item > .boyan-item-title {*/
+/*    color: white;*/
+/*}*/
 
-.boyan:hover > .boyan-item > label > .boyan-item-arrow {
-    display: block;
-    opacity: 100%;
-}
+/*.boyan:hover > .boyan-item > label > .boyan-item-arrow {*/
+/*    display: block;*/
+/*    opacity: 100%;*/
+/*}*/
 
-.boyan-item-title:hover + .boyan-item-meme > .boyan-item-meme-wrapper{
-    max-height: 100%;
-}
+/*.boyan-item-title:hover + .boyan-item-meme > .boyan-item-meme-wrapper{*/
+/*    max-height: 100%;*/
+/*}*/
 
-.boyan-item-title:hover > .boyan-item-arrow {
-    transform: rotate(180deg);
-}
+/*.boyan-item-title:hover > .boyan-item-arrow {*/
+/*    transform: rotate(180deg);*/
+/*}*/
+
+/*img:active {*/
+/*    opacity: 0.3;*/
+/*}*/
 
 
